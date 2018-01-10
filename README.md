@@ -6,3 +6,5 @@ This will be a creation of:
   $Jasper Vermeer
   $Anmar Ram
   $Rik Dijkman
+  
+  jongens bij alles wat je programmeert moet je er text bijschrijven wat het is enzo zodat als iemand anders de code leest dat het makkelijk te begrijpen is
