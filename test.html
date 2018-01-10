@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="shortcut icon" href="https://drive.google.com/uc?id=1mASxmoP1MQHuWn8D5l1C2Xkjv2m10Drj"/>
+	<title>Pull the Sword.com</title>
+    
+</head>
+<body>
+    <style>
+        
+		body {
+            width: 1000px;
+            height: 900px;
+			overflow-y: hidden;
+            overflow-x: hidden;
+            
+		}
+        ::-webkit-scrollbar {
+    width: 10px;
+            
+        
+}
+       
+
+            /* Track */
+        ::-webkit-scrollbar-track {
+        background: #E08953; 
+        
+        }
+
+/* Handle */
+        ::-webkit-scrollbar-thumb {
+        background: #7F3300;
+        
+        }
+
+/* Handle on hover */
+        ::-webkit-scrollbar-thumb:hover {
+        background: #AF4600; 
+        
+      
+        
+        
+        }
+        
+		input[type=text] {
+			position: absolute;
+			
+			
+			width: 130px;
+			height: 60px;
+			-webkit-transition: width 0.4s ease-in-out;
+			transition: width 0.4s ease-in-out;
+			webkitAnimationName: 'knopbeneden';
+			AnimationDuration: '2s';
+		
+		}
+        
+		
+		
+        
+        .licht {
+            position: absolute;
+            left: 140px;
+            top: -100px;
+            z-index: 3;
+        }
+        .scroll {
+            background-color: #E25A00;
+            width: 200px;
+            height: 250px;
+            overflow-y: scroll;
+            position: absolute;
+            left: 1210px;
+            top: 150px;
+            ::-webkit-scrollbar-track {
+                background: #f1f1f1; 
+            }
+            
+            
+            
+        
+        }
+        .money {
+            position: absolute;
+            transform: scale(0.16);
+            left: -860px;
+            top: -700px;
+        }
+		
+        .shade {
+            position: absolute;
+            left: 470px;
+            top: 280px;
+            z-index: -3;
+            transform: scale(0.6);
+            
+            
+        }
+		
+		
+
+        .geldpotHolder {
+            position: absolute;
+            left: 200px;
+            top: 600px
+        }
+     
+		
+	
+		
+        
+		.steenv {
+			position: absolute;
+			left: 600px;
+			top: 150px;
+           
+			transition: 1s;
+			pointer-events: none;
+			animation-delay: 1s;
+            
+            
+		}
+        .roll { 
+            position: absolute;
+            transform: scale(0.6);
+            -webkit-animation-fill-mode: forwards;
+            animation-delay: 1s;
+            left: 1080px;
+            top: -10px;
+            
+        }
+        .roll1 {
+            position: absolute;
+            transform: scale(0.6);
+            left: 1057px;
+            top: 156px;
+            animation-fill-mode: forwards;
+        }
+        
+		.knop {
+			position: absolute;
+           
+			left: 450px;
+			top: 500px;
+           
+			transition: 0,5s;
+			animation-duration: 1s;
+			-webkit-animation-fill-mode: forwards;
+		}
+		
+		.knop:hover {
+			transform: scale(1.06);
+			cursor: pointer;
+		}
+		
+		.steen {
+			position: absolute;
+			left: 600px;
+			top: 150px;
+            
+			animation-delay: 1s;
+		}
+        
+		.imgid {
+			position: absolute;
+			left: 650px;
+			top: 160px;
+			transition: 1s;
+			animation-fill-mode: forwards;
+			animation-delay: 1s;
+           
+		}
+        
+		.imgid:hover {
+			cursor: pointer;
+			transform: scale(1.04);
+		}
+		
+		@-webkit-keyframes lose {
+			0%{ transform: translate(0)}
+			5%{ transform: translate(4px)}
+			10%{ transform: translate(0)}
+			15%{ transform: translate(4px)}
+			20%{ transform: translate(0)}
+			25%{ transform: translate(4px)}
+			30%{ transform: translate(0)}
+			35%{ transform: translate(4px)}
+			40%{ transform: translate(0)}
+			45%{ transform: translate(4px)}
+			50%{ transform: translate(0px)}
+			55%{ transform: translate(0)}
+			60%{ transform: translate(4px)}
+			65%{ transform: translate(0)}
+			70%{ transform: translate(4px)}
+			75%{ transform: translate(0)}
+			80%{ transform: translate(4px)}
+			85%{ transform: translate(0)}
+			90%{ transform: translate(4px)}
+			100%{ transform: translate(0)}
+			
+			
+		}
+		
+		@-webkit-keyframes won {
+			0%{ transform: translate(0)}
+			25%{ z-index: 4; transform: translatey(-200px) translateX(-100px)}
+			50%{ z-index: 7; transform: translatey(50px) translateX(30px) rotate(17deg)}
+			100%{  z-index: 7; transform: translatey(50px) translateX(30px) rotate(17deg) scale(1.5)}
+		
+			
+			
+		}
+		@-webkit-keyframes knopbeneden {
+			from{transform: translateY(0)}
+			from{opacity: 1;}
+			to{transform: translateY(40px)}
+			to{opacity: 0;}
+		}
+		@-webkit-keyframes rollbeneden {
+			from{transform: translateX(0)}
+			from{opacity: 1;}
+			to{transform: translateX(-400px)}
+			to{opacity: 0;}
+		}
+		@-webkit-keyframes verdwijn {
+			from{opacity: 1;}
+			to{opacity: 0;}
+		}
+       
+       
+    </style>
+    
+    
+	<font size="7" id="geldpotHolder" class="geldpotHolder"></font>
+    
+    
+    <script>
+    
+    var odds = 100; 
+    
+    var time = new Date();
+        
+    var h = time.getHours();
+        
+    
+    var geldpot = 20;
+    
+    document.getElementById("geldpotHolder").innerHTML = geldpot.toString();
+    
+   
+        
+    
+        
+        
+        
+        
+        
+    console.log(h);
+    if (h > 10 && h < 30 ) { 
+        console.log("day")
+        document.body.style.backgroundColor = "skyblue";
+        
+    }
+    else {
+        console.log("night");
+        document.body.style.backgroundColor = "navy";
+    }
+        
+    //audio.play();
+        
+        
+    var tussenfunction = (function() {
+        var executed = false;
+        return function() {
+            if (!executed) {
+                executed = true;
+                colorchange();
+            }
+        };
+    })();
+	
+    function colorchange() {
+                
+        
+        
+        
+                knop.style.webkitAnimationName = 'knopbeneden';
+        
+                var randomgetal = Math.floor(Math.random() * odds +1);
+                console.log(randomgetal);
+		        if (randomgetal === 1){
+			
+                    if (imgid.style.webkitAnimationName !== 'won' ) {
+                        imgid.style.webkitAnimationName = 'won';
+                        imgid.style.webkitAnimationDuration = '5s';
+                        imgid.style.webkitAnimationFillMode = 'forwards';
+                        console.log('you won');
+				
+                        setTimeout(function() {
+					       licht.style.webkitAnimationName = '';
+                        }, 4000);
+                    }
+		        }
+                else {
+            
+			         imgid.style.webkitAnimationName = 'lose';
+			         imgid.style.webkitAnimationDuration = '1s';
+			             steen.style.webkitAnimationName = 'lose';
+			         steen.style.webkitAnimationDuration = '1s';
+			         steen1.style.webkitAnimationName = 'lose';
+			         steen1.style.webkitAnimationDuration = '1s';
+            
+			         console.log('you lost');
+			
+                    setTimeout(function() {
+			 	       imgid.style.webkitAnimationName = '';
+                    }, 4000);
+                }
+        
+      }
+        
+        
+   
+    </script>
+    
+	
+    
+		
+		<img id="knop" 		class="knop" 	onclick="tussenfunction()" src="https://drive.google.com/uc?id=1gbccVFXq9zBvsNC_jHRQJ2wgyJjr6Ual" >
+        
+		<img id="licht" 	class="licht" 	src="https://drive.google.com/uc?id=1e35vuYfzDIBnT6KtwWEIpusHaTywciyV">
+        
+		
+        
+		<img id="steen" 	class="steen" 	src="https://drive.google.com/uc?id=1YnpE51N1GDP8iFq8dN74_nvd_NYTrP0J">
+        
+		<img id="imgid" 	class="imgid" 	src="https://drive.google.com/uc?id=1mASxmoP1MQHuWn8D5l1C2Xkjv2m10Drj" >
+        
+		<img id="steen1" 	class="steenv" 	src="https://drive.google.com/uc?id=1jyzWoc9IsHpHxnYKdqiakz1dz-Yzz7KY"> 
+    
+        <img id="roll" 	class="roll" 	src="https://drive.google.com/uc?id=1eghWTO9LOFNBAYN-UKUI7wJ2K6D3E_F5" > 
+    
+    
+        <img id="money" 	class="money" 	src="https://drive.google.com/uc?id=1j3vk9HX-TyYTp97L74eNp6g75JBC129x" > 
+    
+    
+       
+        <img id="shade" 	class="shade" 	src="https://drive.google.com/uc?id=1FGfEvPpnmV-i3tNTka9WhSRv9gH_XtX0" > 
+    
+        <span class="circle"></span>
+    
+        <div class="scroll">You can use the overflow property when you want to have better control of the layout. The default value is visible.You can use the overflow property when you want to have better control of the layout. The default value is visible.You can use the overflow property when you want to have better control of the layout. The default value is visible.You can use the overflow property when you want to have better control of the layout. The default value is visible.</div>
+    
+        
+        
+		
+		
+        
+		
+    
+</body></html>
