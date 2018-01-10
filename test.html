@@ -194,6 +194,8 @@
     var time = new Date();
     var h = time.getHours();
     var geldpot = 20;
+    var Audio = new Audio ();
+    Audio.src = "Audio.mp3";
     
     document.getElementById("geldpotHolder").innerHTML = geldpot.toString();
 
@@ -207,13 +209,12 @@
         console.log("night");
         document.body.style.backgroundColor = "navy";
     }
-        
-    //audio.play();
 
     var tussenfunction = (function() {
         var executed = false;
         return function() {
             if (!executed) {
+		Audio.play();
                 executed = true;
                 colorchange();
             }
