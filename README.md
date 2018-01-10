@@ -5,4 +5,4 @@ This will be a creation of:
   Wim de Jager
   Jasper Vermeer
   Anmar Ram
-  Rik Achternaam
+  Rik Dijkman
