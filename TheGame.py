@@ -23,7 +23,7 @@ def lottery(user_chance, people_amount):
 class User(object):
 
     def __init__(self, membship):
-        username = self
+        self.username = self
         self.membship = membship
 
     def setup(self):
@@ -43,6 +43,9 @@ class Play(object):
         pass
 
 #testing some things
-ole = Play("gold")
-print(ole.user.membship)
-print(ole.user)
+ole = Play("gold") # var ole will be the username of a person
+ole.user.setup()
+x = 1
+for i in range(0, x):
+    # make it run x times
+    lottery(ole.user.user_chance, people_amount)
