@@ -2,7 +2,7 @@
 from sys import exit
 from random import randint
 from textwrap import dedent
-people_amount = 10000 # number of people playing the game
+people_amount = 10000 # number of people playing the game, this will be equal to the change there is of winning.
 
 def win():
     return print("You pulled the fucking sword out!")
