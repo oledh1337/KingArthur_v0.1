@@ -1,4 +1,4 @@
-# klein begin
+#klein begin
 from sys import exit
 from random import randint
 from textwrap import dedent
@@ -27,12 +27,22 @@ class User(object):
         self.membship = membship
 
     def setup(self):
-        pass # to be finished
+        if self.membship == "gold":
+            self.user_chance = 20
+        else:
+            self.user_chance = 1
+
 
 class Play(object):
 
-    def __init__(self):
-        pass
+    def __init__(self, membship):
+#        super(Play, self).__init__()
+        self.user = User(membship)
 
     def setup(self):
         pass
+
+#testing some things
+ole = Play("gold")
+print(ole.user.membship)
+print(ole.user)
