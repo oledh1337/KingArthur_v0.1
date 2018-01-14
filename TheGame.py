@@ -1,13 +1,14 @@
-#klein begin
 from sys import exit
 from random import randint
 from textwrap import dedent
-people_amount = 10000 # number of people playing the game, this will be equal to the change there is of winning.
 
-def win():
+people_amount = 10000 # number of people playing the game
+membships = {'default': 1, 'gold': 20, 'diamond': 40, 'platina': 100}
+
+def winner():
     return print("You pulled the fucking sword out!")
 
-def lose():
+def loser():
     return print("The sword is still in the fucking rock")
 
 def lottery(user_chance, people_amount):
@@ -16,9 +17,9 @@ def lottery(user_chance, people_amount):
     for i in range(0, user_chance):
         user_numbs.append(randint(0, people_amount))
     if winner in user_numbs:
-        win()
+        return "win"
     else:
-        lose()
+        return "lose"
 
 class User(object):
 
@@ -28,9 +29,9 @@ class User(object):
 
     def setup(self):
         if self.membship == "gold":
-            self.user_chance = 20
+            self.chance = 20
         else:
-            self.user_chance = 1
+            self.chance = 1
 
 
 class Play(object):
@@ -43,9 +44,3 @@ class Play(object):
         pass
 
 #testing some things
-ole = Play("gold") # var ole will be the username of a person
-ole.user.setup()
-x = 1
-for i in range(0, x):
-    # make it run x times
-    lottery(ole.user.user_chance, people_amount)
